@@ -6,15 +6,15 @@ import java.sql.SQLException;
 
 public class DBConnection {
 
-    private static final String URL      = "jdbc:mysql://localhost:3306/scrs_db?useSSL=false&serverTimezone=UTC";
-    private static final String USERNAME = "root";
+    private static final String URL      = "jdbc:postgresql://localhost:5432/scrs_db";
+    private static final String USERNAME = "postgres";
     private static final String PASSWORD = "your_password";
 
     static {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName("org.postgresql.Driver");
         } catch (ClassNotFoundException e) {
-            throw new RuntimeException("MySQL JDBC Driver not found: " + e.getMessage());
+            throw new RuntimeException("PostgreSQL JDBC Driver not found: " + e.getMessage());
         }
     }
 

@@ -1,6 +1,6 @@
 # Online Student Course Registration System
 
-A web-based application for student course registration and management built using **Java Servlets**, **JSP**, **JDBC**, and **MySQL**.
+A web-based application for student course registration and management built using **Java Servlets**, **JSP**, **JDBC**, and **PostgreSQL**.
 
 ---
 
@@ -10,7 +10,7 @@ A web-based application for student course registration and management built usi
 |-------|-----------|
 | Backend | Java Servlets (Jakarta EE) |
 | Frontend | JSP (JavaServer Pages) + JSTL |
-| Database | MySQL 8 |
+| Database | PostgreSQL 15 |
 | DB Connectivity | JDBC |
 | Build Tool | Maven |
 | Server | Apache Tomcat 10 |
@@ -67,7 +67,7 @@ student-course-registration/
 
 ### Prerequisites
 - Java 11+
-- MySQL 8+
+- PostgreSQL 15+
 - Apache Tomcat 10+
 - Maven 3.8+
 
@@ -81,12 +81,12 @@ student-course-registration/
 
 2. **Set up the database**
    ```bash
-   mysql -u root -p < schema.sql
+   psql -U postgres -f schema.sql
    ```
 
 3. **Update DB credentials in `DBConnection.java`**
    ```java
-   private static final String USERNAME = "your_username";
+   private static final String USERNAME = "postgres";
    private static final String PASSWORD = "your_password";
    ```
 
